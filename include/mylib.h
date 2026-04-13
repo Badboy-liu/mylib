@@ -11,4 +11,8 @@
 #else
   #define MYLIB_API
 #endif
-MYLIB_API int add(int a, int b);
+
+namespace mylib
+{
+  MYLIB_API int add(int a, int b);
+}
