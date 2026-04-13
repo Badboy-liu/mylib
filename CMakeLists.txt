@@ -4,7 +4,7 @@ project(mylib)
 set(CMAKE_CXX_STANDARD 20)
 
 add_library(${PROJECT_NAME} src/mylib.cpp)
-target_compile_definitions(${PROJECT_NAME} PRIVATE MYLIB_EXPORTS)
+#target_compile_definitions(${PROJECT_NAME} PRIVATE MYLIB_EXPORTS)
 target_include_directories(${PROJECT_NAME}
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -16,7 +16,6 @@ install(TARGETS ${PROJECT_NAME}
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
-        ARCHIVE DESTINATION debug/lib CONFIGURATIONS Debug
 )
 
 install(DIRECTORY  include/ DESTINATION include)
