@@ -16,6 +16,7 @@ install(TARGETS ${PROJECT_NAME}
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
+        ARCHIVE DESTINATION debug/lib CONFIGURATIONS Debug
 )
 
 install(DIRECTORY  include/ DESTINATION include)
