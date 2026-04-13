@@ -26,3 +26,26 @@ install(EXPORT mylibTargets
         DESTINATION share/mylib
 )
 
+
+include(CMakePackageConfigHelpers)
+
+# 生成 Config.cmake
+configure_package_config_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/cmake/mylibConfig.cmake.in
+        ${CMAKE_CURRENT_BINARY_DIR}/mylibConfig.cmake
+        INSTALL_DESTINATION share/mylib
+)
+
+# 生成版本文件
+write_basic_package_version_file(
+        ${CMAKE_CURRENT_BINARY_DIR}/mylibConfigVersion.cmake
+        VERSION 1.0.0
+        COMPATIBILITY AnyNewerVersion
+)
+
+# 安装 Config
+install(FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/mylibConfig.cmake
+        ${CMAKE_CURRENT_BINARY_DIR}/mylibConfigVersion.cmake
+        DESTINATION share/mylib
+)
