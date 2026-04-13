@@ -1,5 +1,6 @@
-#include <iostream>
 #pragma once
+#include <iostream>
+
 
 #ifdef _WIN32
   #ifdef MYLIB_EXPORTS
@@ -10,4 +11,4 @@
 #else
   #define MYLIB_API
 #endif
-int add(int a, int b);
+MYLIB_API int add(int a, int b);
