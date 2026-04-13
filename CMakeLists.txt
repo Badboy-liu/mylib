@@ -4,7 +4,7 @@ project(mylib)
 set(CMAKE_CXX_STANDARD 20)
 
 add_library(${PROJECT_NAME} src/mylib.cpp)
-
+target_compile_definitions(${PROJECT_NAME} PRIVATE MYLIB_EXPORTS)
 target_include_directories(${PROJECT_NAME}
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
