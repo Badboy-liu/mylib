@@ -19,6 +19,8 @@ install(TARGETS ${PROJECT_NAME}
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
+        INCLUDES DESTINATION include
+        COMPONENT test
 )
 
 install(DIRECTORY  include/ DESTINATION include)
